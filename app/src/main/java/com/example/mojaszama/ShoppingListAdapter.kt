@@ -1,6 +1,5 @@
 package com.example.mojaszama
 
-import android.database.Cursor
 import android.database.DatabaseUtils
 import android.database.sqlite.SQLiteDatabase
 import android.provider.BaseColumns
@@ -42,10 +41,25 @@ class ShoppingListAdapter(val db: SQLiteDatabase) :
         holder.viewBinding.button.setOnClickListener {
             db.delete(
                 ShoppingListDBInfo.TABLE_NAME,
-                ShoppingListDBInfo.TABLE_COLUMN_PRODUCT + "=\"" + name.text + "\"",
+                ShoppingListDBInfo.TABLE_COLUMN_PRODUCT + "=\"" + name.text.toString() + "\"",
                 null
             )
             notifyItemRemoved(holder.adapterPosition)
+        }
+
+        holder.viewBinding.shoppingListCheckBox.setOnClickListener {
+            if(holder.viewBinding.shoppingListCheckBox.isChecked){
+                TempFridgeDataBase.productList.add(Product(name.text.toString(),amount.text.toString(),amountgml.text.toString()))
+            }
+            else{
+                for(product: Product in TempFridgeDataBase.productList){
+                    if(product.productName.equals(name.text.toString())
+                        && product.amount.equals(amount.text.toString())
+                        && product.amountType.equals(amountgml.text.toString())){
+                        TempFridgeDataBase.productList.remove(product)
+                    }
+                }
+            }
         }
     }
 }

@@ -44,6 +44,7 @@
             android:padding="10dp"
             android:text=" Przenieś do lodówki " />
 
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

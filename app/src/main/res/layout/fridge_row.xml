@@ -7,7 +7,7 @@
     android:clipToPadding="false">
 
     <TextView
-        android:id="@+id/shopping_list_product_name"
+        android:id="@+id/fridgeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <CheckBox
-        android:id="@+id/shopping_list_checkBox"
+        android:id="@+id/fridgeCheckBox"
         style="@style/Widget.Material3.CompoundButton.CheckBox"
         android:layout_width="75dp"
         android:layout_height="61dp"
@@ -35,36 +35,36 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/shopping_list_g_ml"
+        android:id="@+id/fridgeAmountGML"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="20dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shopping_list_checkBox" />
+        app:layout_constraintEnd_toStartOf="@+id/fridgeCheckBox" />
 
     <TextView
-        android:id="@+id/shopping_list_amount"
+        android:id="@+id/fridgeValAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shopping_list_g_ml" />
+        app:layout_constraintEnd_toStartOf="@+id/fridgeAmountGML" />
 
     <Button
         android:id="@+id/button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fridgeText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485"
         android:layout_width="19dp"
         android:layout_height="26dp"
         android:layout_marginStart="16dp"
         android:backgroundTint="#C63636"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/shopping_list_product_name"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        android:textSize="8sp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

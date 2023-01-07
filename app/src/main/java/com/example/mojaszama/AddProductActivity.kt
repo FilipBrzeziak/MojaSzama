@@ -2,14 +2,16 @@ package com.example.mojaszama
 
 import android.content.ContentValues
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.mojaszama.databinding.ActivityAddProductBinding
 
 
 class AddProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddProductBinding
+    private var id: Long? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,15 +43,13 @@ class AddProductActivity : AppCompatActivity() {
                 value.put(ShoppingListDBInfo.TABLE_COLUMN_AMOUNT, amount)
                 value.put(ShoppingListDBInfo.TABLE_COLUMN_AMOUNT_TYPE, amountType)
 
-
                 shoppingListDB.insertOrThrow(ShoppingListDBInfo.TABLE_NAME, null, value)
                 finish()
-
             }
             else{
                 val infoToast = Toast.makeText(applicationContext, "Uzupelnij dane!", Toast.LENGTH_SHORT)
                 infoToast.show()
             }
-        }
+       }
     }
 }
